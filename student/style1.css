@@ -1,0 +1,35 @@
+/* foundation.html part */
+
+.offcanvas{
+  position:absolute;
+  height: 100vh;
+}
+.inner-wrap {
+   min-height: 100vh;
+   transition: all 0.3s;
+   box-shadow: none;
+}
+.offcanvas aside{
+  padding-top: 20px;
+  background-color: lightblue;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+.offcanvas ul.no-bullet {
+    padding: 20px;
+    border-bottom: 1px solid #47748b;
+}
+.offcanvas ul{
+  padding-left: 20px;
+}
+.offcanvas li{
+  padding-bottom: 30px;
+}
+.offcanvas li a {
+  display:block;
+}
+#content{
+  height: 100vh;
+}
+.move-right .exit-off-canvas{
+  box-shadow: none;
+}

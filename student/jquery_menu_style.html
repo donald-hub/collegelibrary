@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap sidebar</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+  <script src="../bootstrap/js/bootstrap.js"></script>
+  <script src="../bootstrap/js/jquery.min.js"></script>
+  <script src="../bootstrap/js/bootstrap.min.js"></script>
+<meta charset="utf-8">
+<title></title>
+<style type="text/css">
+
+
+/* copied from jquery website's css file */
+body{
+  background-color: rgb(236, 236, 236);
+}
+
+#title{
+  text-align: center;
+  color: white;
+}
+
+#heading{
+  padding: 20px 20px;
+  background: white;
+}
+/* upto here */
+
+
+li{
+    font-size: 1.2em;
+}
+    .box{
+        width: 300px;
+        z-index:2;
+        position:absolute;
+        left:-300px;
+        float:left;
+        overflow: hidden;
+    }
+    .outer{
+      width: 100%;
+      z-index:1;
+      position:absolute;
+      left:0px;
+      background: silver;
+    }
+    /* Add padding and border to inner content
+    for better animation effect */
+    .box-inner{
+        height: 100vh;
+        border: 1px solid #a29415;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+      $(document).ready(function(){
+    $('#slide-toggle').click(function(){
+    var hidden = $('.box');
+    if (hidden.hasClass('visible')){
+        hidden.animate({"left":"-300px"}, "medium").removeClass('visible');
+        $(".outer").animate({ "width": "100%" ,  "left": "0px" }, "medium");
+    } else {
+        hidden.animate({"left":"0px"}, "medium").addClass('visible');
+        $(".outer").animate({ "width": "1049px" , "left": "300px" }, "medium");
+    }
+    });
+});
+
+</script>
+</head>
+<body class="container-fluid">
+
+
+    <div class="box">
+        <div class="box-inner">
+          <div id="profile_menu" class="col-xs-12">
+              <div style="height:100%; padding-top: 10px;">
+                <div class="well well-sm">Logged in as<center><br><img style="border-radius: 100%; border: 2px solid white; " width="50px"  height="50px" src="../images/profile.jpg"><br>donaldmahanta@gmail.com</center></div>
+              </div>
+                <ul  class="nav">
+                <li id="items" class="nav-item">
+                <a style="color:black;" class="nav-link active" href="#details" data-toggle="tab"><center>My profile</center></a>
+                </li>
+                <li id="items" class="nav-item">
+                <a style="color:black;" class="nav-link" href="#issued" data-toggle="tab"><center>Books issued</center></a>
+                </li>
+                <li id="items" class="nav-item">
+                <a style="color:black;" class="nav-link" href="#update_password" data-toggle="tab"><center>Update Password</center></a>
+                </li>
+                <li id="items" class="nav-item">
+                <a style="color:black;" class="nav-link" href="#fine" data-toggle="tab"><center>Calculate fine</center></a>
+                </li>
+                <li id="items" class="nav-item">
+                <a style="color:black;" class="nav-link" href="#messages" data-target="#modal" data-toggle="modal"><center>Log Out</center></a>
+                </li>
+                </ul>
+          </div>
+        </div>
+    </div>
+    <div class="outer">
+      <nav style="position:fixed; width: 100%;" class="navbar navbar-inverse">
+          <ul class="nav navbar-nav">
+            <li class="nav-item">
+            <a class="nav-link" id="slide-toggle" href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+          </li>
+            <li>
+                   <a href="" class="navbar-brand">Digital Library</a>
+            </li>
+          </ul>
+
+      </nav>
+
+
+      <div class="col-md-12" style="margin-top: 100px; min-height:1000px">
+        <div class="panel panel-default" style="height: 400px;">
+          <div class="panel-heading" id="heading">
+            <h3 class="panel-title"><b>Description</b></h3>
+          </div>
+          <div class="panel-body">
+            I can hear the angry e-mails coming in. “Andy,
+            I’ve been writing web pages since 1998, and I
+            never used a validator.” Okay, it’s true. A lot of
+            people, even some professional web developers, work without validating their code. Some
+            of my older web pages don’t validate at all.
+            (You can run the W3C validator on any page
+            you want, not just one you wrote. This can be
+            a source of great joy if you like feeling superior
+            to sloppy coders.) When I became more proficient and more prolific in my web development,
+            I found that those little errors often caused a
+            whole lot of grief down the road. I really believe
+            you should validate every single page you
+            write. Get into the habit now, and it’ll pay huge
+            dividends. When you’re figuring out this stuff
+            for the first time, do it right.
+            If you already know some HTML, you’re gonna
+            hate the validator for a while because it rejects
+            coding habits that you might think are perfectly
+            fine. Unlearning a habit is a lot harder than
+            learning a new practice, so I feel your pain. It’s
+            still worth it.
+            After you discipline yourself to validate your
+            pages, you’ll find you’ve picked up good
+            habits, and validation becomes a lot less painful. Experienced programmers actually like
+            the validation process because it becomes
+            much easier and prevents problems that could
+            cause lots of grief later. You may even want
+            to re-validate a page you’ve been using for a
+            while. Sometimes a content update can cause
+            mistakes.
+          </div>
+
+        </div>
+      </div>
+    </div>
+</body>
+</html>
